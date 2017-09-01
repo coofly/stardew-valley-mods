@@ -54,30 +54,30 @@ namespace NPCMapLocations
             {
                 this.optionSlots.Add(new ClickableComponent(new Rectangle(this.xPositionOnScreen + Game1.tileSize / 4, this.yPositionOnScreen + Game1.tileSize * 5 / 4 + Game1.pixelZoom + i * ((height - Game1.tileSize * 2) / 7), width - Game1.tileSize / 2, (height - Game1.tileSize * 2) / 7 + Game1.pixelZoom), string.Concat(i)));
             }
-            tooltipButton1 = new MapModButton("Above Location Tooltip", 1, -1, -1, -1, -1);
-            tooltipButton2 = new MapModButton("Below Location Tooltip", 2, -1, -1, -1, -1);
-            tooltipButton3 = new MapModButton("Bottom-left Corner", 3, -1, -1, -1, -1);
-            immersionButton1 = new MapModButton("Always Show Villagers", 4, -1, -1, -1, -1);
-            immersionButton2 = new MapModButton("Show Villagers Player Has Talked To", 5, -1, -1, -1, -1);
-            immersionButton3 = new MapModButton("Hide Villagers Player Has Talked To", 6, -1, -1, -1, -1);
+            tooltipButton1 = new MapModButton("在地点提示上方", 1, -1, -1, -1, -1);
+            tooltipButton2 = new MapModButton("在地点提示下方", 2, -1, -1, -1, -1);
+            tooltipButton3 = new MapModButton("左下角显示", 3, -1, -1, -1, -1);
+            immersionButton1 = new MapModButton("总是显示居民", 4, -1, -1, -1, -1);
+            immersionButton2 = new MapModButton("显示已经和玩家交谈过的居民", 5, -1, -1, -1, -1);
+            immersionButton3 = new MapModButton("隐藏已经和玩家交谈过的居民", 6, -1, -1, -1, -1);
             //this.options.Add(new OptionsElement("Menu Key:"));
             //this.options.Add(new MapModInputListener("Change menu key", 37, this.optionSlots[0].bounds.Width, -1, -1));
             this.options.Add(new OptionsElement("NPC Map Locations Mod Version"));
-            this.options.Add(new OptionsElement("Names Tooltip Placement:"));
+            this.options.Add(new OptionsElement("名称提示位置:"));
             this.options.Add(tooltipButton1);
             this.options.Add(tooltipButton2);
             this.options.Add(tooltipButton3);
-            this.options.Add(new OptionsElement("Immersion Settings:"));
+            this.options.Add(new OptionsElement("专注设置:"));
             this.options.Add(immersionButton1);
             this.options.Add(immersionButton2);
             this.options.Add(immersionButton3);
-            this.options.Add(new MapModCheckbox("Only Show Villagers in Player's Location", 39, -1, -1));
-            this.options.Add(new MapModCheckbox("Only Show Villagers Within Specified Heart Level", 41, -1, -1));
-            this.options.Add(new MapModSlider("Minimum Heart Level", 0, -1, -1));
-            this.options.Add(new MapModSlider("Maximum Heart Level", 1, -1, -1));
-            this.options.Add(new OptionsElement("Extra Settings:"));
-            this.options.Add(new MapModCheckbox("Show Hidden Villagers", 48, -1, -1));
-            this.options.Add(new MapModCheckbox("Mark Villagers With Daily Quest or Birthday", 42, -1, -1));
+            this.options.Add(new MapModCheckbox("只显示玩家所在位置的居民", 39, -1, -1));
+            this.options.Add(new MapModCheckbox("只显示指定好感度范围的居民", 41, -1, -1));
+            this.options.Add(new MapModSlider("最低好感度", 0, -1, -1));
+            this.options.Add(new MapModSlider("最高好感度", 1, -1, -1));
+            this.options.Add(new OptionsElement("扩展设置:"));
+            this.options.Add(new MapModCheckbox("显示隐藏居民", 48, -1, -1));
+            this.options.Add(new MapModCheckbox("标记有日常任务或者过生日的居民", 42, -1, -1));
             // Custom NPCs
             if (customNPCs != null)
             {
@@ -89,8 +89,8 @@ namespace NPCMapLocations
                     }
                 }
             }
-            this.options.Add(new MapModCheckbox("Show Traveling Merchant", 40, -1, -1));
-            this.options.Add(new OptionsElement("Include/Exclude Villagers:"));
+            this.options.Add(new MapModCheckbox("显示旅行货车", 40, -1, -1));
+            this.options.Add(new OptionsElement("包含/排除居民:"));
             this.options.Add(new MapModCheckbox(npcNames["Abigail"], 7, -1, -1));
             this.options.Add(new MapModCheckbox(npcNames["Alex"], 8, -1, -1));
             this.options.Add(new MapModCheckbox(npcNames["Caroline"], 9, -1, -1));
@@ -432,7 +432,7 @@ namespace NPCMapLocations
                         }
                         if (this.currentItemIndex + i == 0)
                         {
-                            Utility.drawTextWithShadow(b, "NPC Map Locations v" + MapModMain.current, Game1.dialogueFont, new Vector2(x + Game1.tileSize / 2, y + Game1.tileSize / 4), Color.Black);
+                            Utility.drawTextWithShadow(b, "NPC Map Locations v" + MapModMain.current + "   Sc千寻 汉化", Game1.dialogueFont, new Vector2(x + Game1.tileSize / 2, y + Game1.tileSize / 4), Color.Black);
                             // Utility.drawBoldText(b, MapModVersionChecker.notification, Game1.smoothFont, new Vector2(x + Game1.tileSize / 2 + Game1.borderFont.MeasureString("NPC Map Locations v" + MapModVersionChecker.VERSION).X, y + Game1.tileSize / 2), Color.Gray);
                         }
                         else
